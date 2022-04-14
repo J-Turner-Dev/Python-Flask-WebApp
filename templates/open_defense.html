@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Open Defense</title>
+    <link href="{{ url_for('static', filename='chess_css.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
+</head>
+<!--Main body of the page-->
+
+<body>
+
+    <!--A navigation sidebar for when the user logins, including logout link-->
+    <div class="fixed">
+        <img src="{{ url_for('static', filename='blackknight.png' ) }}" width="20%" height="20%">
+        <p>
+        <h4>
+            Welcome,
+            <br>
+            {{ current_user }}
+        </h4>
+        <a href="{{ url_for('password_update') }}">Update Password</a>
+        <br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="{{ url_for('home') }}">Home</a>
+        </p>
+    </div>
+
+    <div class="container-1">
+        <h1 class="title">Open Defense</h1>
+    </div>
+
+    <div class="container-2">
+        <p>The Open Defense is defined by the moves 1.e4 and then black's
+            response is e5</p>
+    </div>
+
+</body>
+
+</html>

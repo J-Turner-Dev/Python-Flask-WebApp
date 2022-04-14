@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chess Theory - Registration Page</title>
+    <link href="{{ url_for('static', filename='chess_css.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
+</head>
+
+<body>
+    <div class="container-1">
+        <h1 class="title">Chess Theory</h1>
+    </div>
+    <div class="container-2">
+        <h2>Please Register</h2>
+        <br>
+        <form action="" method="POST">
+            <input type="text" placeholder="Name" name="nm">
+            <br>
+            <input type="text" placeholder="Username" name="un">
+            <br>
+            <input type="password" placeholder="Password" name="pw">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <br>
+        <h3>{{ registration_message }}
+            <br>
+            <br>
+            <a href="{{ url_for('login') }}">Return to Login Page</a>
+        </h3>
+    </div>
+</body>
+
+</html>

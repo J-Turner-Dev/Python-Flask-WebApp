@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chess Theory</title>
+    <link href="{{ url_for('static', filename='chess_css.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='favicon.ico') }}" rel="shortcut icon">
+</head>
+
+<body>
+
+    <!--A navigation sidebar for when the user logins, including logout link-->
+    <div class="fixed">
+        <img src="{{ url_for('static', filename='blackknight.png' ) }}" width="20%" height="20%">
+        <p>
+        <h4>
+            Welcome,
+            <br>
+            {{ current_user }}
+        </h4>
+        <a href="{{ url_for('password_update') }}">Update Password</a>
+        <br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        </p>
+    </div>
+
+    <div class="container-1">
+        <h1 class="title">Chess Theory</h1>
+    </div>
+
+    <div class="container-2">
+        <h4>
+            <ul class="square">
+                <li>Chess Pieces</li>
+                <li>Chess Openings</li>
+                <li>Chess Middlegame</li>
+                <li>Chess Endgame</li>
+                <li>Chess Tactics</li>
+                <li>Chess Strategy</li>
+            </ul>
+        </h4>
+        <h2>Chess Pieces</h2>
+        <!--The table that displays all the piece information-->
+        <table border="1">
+
+            <tr>
+                <th>Pawn</th>
+                <td rowspan="2">
+                    <p>
+                        The pawn is the weakest piece. It can move only one space forward
+                        and attacks diagonally to the front.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='pawn.png' )}}" width="80%" height="80%">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Knight</th>
+                <td rowspan="2">
+                    <p>
+                        The knight is a minor piece. It is a beginning and middlegame piece. It has
+                        the unique ability to jump over pieces. The knight moves in an 'L' shape.
+                        Two spaces forward, backward, left, or right and one space to the left and right.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='knight.png' )}}" width="80%" height="80%">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Bishop</th>
+                <td rowspan="2">
+                    <p>
+                        The Bishop is a minor piece. It is useful for the middle game. It can move only
+                        diagonally for as many spaces as possible.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='bishop.png' )}}" width="80%" height="80%">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Rook</th>
+                <td rowspan="2">
+                    <p>
+                        The rook is a strong endgame piece. It normally remains inactive until many of
+                        the other pieces are removed from the board. The rook can move forward, backward,
+                        left, and right as many spaces as possible.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='rook.png' )}}" width="80%" height="80%">
+                </td>
+            </tr>
+
+            <tr>
+                <th>Queen</th>
+                <td rowspan="2">
+                    <p>
+                        The queen is a very powerful piece. For this reason, it is important to keep
+                        your queen safe. The queen can move in all directions for as many spaces as
+                        possible.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='queen.png' )}}" width="80%" height="80%">
+                </td>
+            </tr>
+
+            <tr>
+                <th>King</th>
+                <td rowspan="2">
+                    <p>
+                        The king is the most important piece. If the king is taken then the player loses
+                        the game. The king can move one space in each direction.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="{{ url_for('static', filename='king.png' )}}" width="80%" height="80%">
+                </td>
+            </tr>
+
+        </table>
+        <h2>Chess Openings</h2>
+        <p>
+            In the game of chess, the white pieces move first and then black moves a
+            piece in response to white. The first move by white directs the game and
+            there are only a few moves that help white gain a starting advantage.
+            Having control of the central squares is necessary for this advantage. The
+            two first moves immediately give white the first claim to central squares.
+        </p>
+        <!--List of the best choices for White's first move-->
+        <h2>First moves for the White Pieces</h2>
+        <h3>Top 4 Central Control Moves</h3>
+        <ul>
+            <li>e4</li>
+            <li>d4</li>
+            <li>c4</li>
+            <li>Nf3</li>
+        </ul>
+        <!--Blacks responses to whites first moves-->
+        <h2>First moves for the Black Pieces</h2>
+        <h3>Top 10 Black responses to e4</h3>
+        <ol>
+            <!--Response to e4 with links for more in depth explanation-->
+            <li><a href="{{ url_for('sicilian_defense') }}">Sicilian Defense</a></li>
+            <li><a href="{{ url_for('open_defense') }}">Open Defense</a></li>
+            <li><a href="{{ url_for('french_defense') }}">French Defense</a></li>
+            <li>Carro-Kan Defense</li>
+            <li>Pirc Defense</li>
+            <li>Scandinavian Defense</li>
+            <li>Modern Defense</li>
+            <li>Alekhine's Defense</li>
+            <li>Nimzowitsch Defense</li>
+            <li>Owen's Defense</li>
+        </ol>
+        <h3>Top 10 Black responses to d4</h3>
+        <ol>
+            <!--Black's response to d4-->
+            <li>King's Indian Defense</li>
+            <li>Queen's Gambit Declined</li>
+            <li>Nimzo-Indian Defense</li>
+            <li>Semi-Slav Defense</li>
+            <li>Benoni Defense</li>
+            <li>Queen's Indian Defense</li>
+            <li>Grünfeld Defense</li>
+            <li>Dutch Defence Defense</li>
+            <li>Trompowsky Attack</li>
+            <li>Queen's Gambit Accepted</li>
+        </ol>
+        <h2>Helpful Websites to Play and Improve</h2>
+        <h4>
+            <!--External webpages to help improve chess skills-->
+            <ul class="none">
+                <li><a href="https://www.chess.com/">Chess.com</a></li>
+                <li><a href="https://lichess.org/">Lichess.org</a></li>
+                <li><a href="https://chesstempo.com/">Chesstempo.com</a></li>
+                <li><a href="https://www.chessgames.com/">Chessgames.com</a></li>
+            </ul>
+        </h4>
+        <!--python code passed to webpage to show date and time page was accessed-->
+        <p>Webpage accessed on this date and time:
+        <h3>{{ time_passed_in  }}</h3>
+        </p>
+    </div>
+
+</body>
+
+</html>
